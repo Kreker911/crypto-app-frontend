@@ -1,0 +1,73 @@
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.main__video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: 500px;
+  z-index: -1;
+  animation: slowMotion 4s infinite;
+}
+
+.main__title {
+  color: #fff;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 90px;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  margin: 100px 0 50px;
+}
+
+.main__button {
+  color: #fff;
+  font-size: 24px;
+  border: 2px solid;
+  padding: 14px 70px;
+  border-radius: 50px;
+  background: transparent;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 0 auto;
+  display: block;
+  transition: 0.2s ease-in;
+  cursor: url("../../images/eth-cursor.png"), pointer;
+}
+
+.main__button:hover {
+  background: #3b5676;
+  opacity: 95%;
+}
+
+.main__picture {
+  background-image: url("../../images/free-icon-linkedin-1051384.png");
+  background: white;
+  border-radius: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+/* @media (min-aspect-ratio: 16/9) {
+  .main__video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .main__video {
+    width: auto;
+    height: 100%;
+  }
+} */

@@ -1,0 +1,35 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navigation__home {
+  color: #fff;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  transition: 0.15s ease-in;
+  margin: 0 0 5px 0;
+}
+
+.navigation__home:hover {
+  opacity: 0.6;
+}
+
+.navigation__list {
+  color: #fff;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  transition: 0.15s ease-in;
+  margin: 0 0 5px 0;
+}
+
+.navigation__list:hover {
+  opacity: 0.6;
+}
