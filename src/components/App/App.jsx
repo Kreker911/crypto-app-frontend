@@ -3,23 +3,43 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import PreLoader from "../PreLoader/PreLoader";
-import { useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import CoinList from "../CoinList/CoinList";
+import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import { fetchCoins } from "../../utils/coinApi";
 
 export default function App() {
+  const [coins, setCoins] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetchCoins()
+      .then((data) => {
+        console.log(data);
+        setCoins(data);
+      })
+      .catch(console.error)
+      .finally(setIsLoading(false));
+  }, []);
 
   return (
     <>
       <Header />
-      <Switch>
-        <Route exact path="/">
+      {isLoading ? (
+        <PreLoader />
+      ) : (
+        <Routes>
+          <Route exact path="/" element={<Main />} />
+          {/* <Route exact path="/">
           <Main />
-        </Route>
-        <Route path="/list">
+        </Route> */}
+          <Route path="/list" element={<CoinList />} />
+          {/* <Route path="/list">
           <CoinList />
-        </Route>
-      </Switch>
+        </Route> */}
+        </Routes>
+      )}
       <Footer />
     </>
   );
