@@ -8,7 +8,7 @@ const Navigation = () => {
         <p className="navigation__home"> Home</p>
       </Link>
       <Link to="/list" style={{ textDecoration: "none" }}>
-        <p className="navigation__list"> Coin List</p>
+        <p className="navigation__market"> Market</p>
       </Link>
     </div>
   );

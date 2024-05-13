@@ -16,10 +16,10 @@
 }
 
 .navigation__home:hover {
-  opacity: 0.6;
+  color: rgba(173, 255, 66, 0.8);
 }
 
-.navigation__list {
+.navigation__market {
   color: #fff;
   font-family: "Cabinet Grotesk", sans-serif;
   font-size: 25px;
@@ -30,6 +30,6 @@
   margin: 0 0 5px 0;
 }
 
-.navigation__list:hover {
-  opacity: 0.6;
+.navigation__market:hover {
+  color: rgba(173, 255, 66, 0.8);
 }

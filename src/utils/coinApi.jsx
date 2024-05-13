@@ -1,6 +1,6 @@
 import { request } from "./api";
 
-export const options = {
+const options = {
   method: "GET",
   headers: {
     accept: "application/json",
@@ -8,16 +8,9 @@ export const options = {
   },
 };
 
-export const fetchCoins = () => {
+export const fetchCoins = (currentPage) => {
   return request(
-    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false",
+    `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=100&page=${currentPage}&sparkline=true`,
     options
   );
 };
-
-// export const fetchCoins = () => {
-//   return request(
-//     `https://api.coingecko.com/api/v3/coins/markets?order=market_cap_desc&per_page=50&page=1&sparkline=false`,
-//     options
-//   );
-// };

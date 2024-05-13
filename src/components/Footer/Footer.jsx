@@ -12,26 +12,26 @@ const Footer = () => {
       <div className="footer__social">
         <Link
           to="https://tripleten.co.il/?from=us"
-          style={{ textDecoration: "none", color: "inherit" }}
+          className="footer__link"
           target="blank"
         >
-          <p className="footer__link">Triple Ten</p>
+          Triple Ten
         </Link>
 
         <Link
           to="https://github.com/Kreker911"
-          style={{ textDecoration: "none", color: "inherit" }}
+          className="footer__git"
           target="blank"
         >
-          <img className="footer__git" src={gitHub} alt="GitHub" />
+          <img className="footer__images" src={gitHub} alt="GitHub" />
         </Link>
 
         <Link
           to="https://www.linkedin.com/in/ilya-mukhamedov"
-          style={{ textDecoration: "none", color: "inherit" }}
+          className="footer__in"
           target="blank"
         >
-          <img className="footer__in" src={linkedIn} alt="LinkedIn" />
+          <img className="footer__images" src={linkedIn} alt="LinkedIn" />
         </Link>
       </div>
     </div>

@@ -1,5 +1,4 @@
 .footer {
-  margin-top: 135px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,6 +31,8 @@
   transition: 0.2s ease-in;
   margin: 0;
   cursor: pointer;
+  text-decoration: none;
+  color: #fff;
 }
 
 .footer__link:hover {
@@ -39,10 +40,15 @@
 }
 
 .footer__git {
-  width: 24px;
-  height: 24px;
   transition: 0.2s ease-in;
   cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer__images {
+  width: 24px;
+  height: 24px;
 }
 
 .footer__git:hover {
@@ -50,10 +56,10 @@
 }
 
 .footer__in {
-  width: 24px;
-  height: 24px;
   transition: 0.2s ease-in;
   cursor: pointer;
+  text-decoration: none;
+  color: #fff;
 }
 
 .footer__in:hover {
