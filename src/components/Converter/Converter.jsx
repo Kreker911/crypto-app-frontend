@@ -3,14 +3,14 @@ import { useState, useEffect } from "react";
 
 const Converter = ({ coin }) => {
   const [amount, setAmount] = useState(1);
-  const [usdAmount, setUsdAmount] = useState();
+  const [usdAmount, setUsdAmount] = useState(0);
 
   const currentPrice = coin?.market_data.current_price.usd;
 
   const regExp = /^\d*\.?\d*$/;
 
   useEffect(() => {
-    setUsdAmount(currentPrice);
+    currentPrice && setUsdAmount(currentPrice);
   }, [currentPrice]);
 
   const handleAmountChange = (e) => {

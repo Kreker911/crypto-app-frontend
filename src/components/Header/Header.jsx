@@ -5,7 +5,7 @@ import logoGreen from "../../images/Logo-green.svg";
 import Navigation from "../Navigation/Navigation";
 import { useState } from "react";
 
-const Header = () => {
+const Header = ({ currentPage }) => {
   const [isHover, setIsHover] = useState(false);
   return (
     <div className="header">
@@ -21,7 +21,7 @@ const Header = () => {
         </Link>
         <h1 className="header__title">Crypto Spotter</h1>
       </div>
-      <Navigation />
+      <Navigation currentPage={currentPage} />
     </div>
   );
 };

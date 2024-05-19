@@ -34,9 +34,9 @@ export default function App() {
 
   return (
     <>
-      <Header />
+      <Header currentPage={currentPage} />
       <Routes>
-        <Route exact path="/" element={<Main />} />
+        <Route exact path="/" element={<Main currentPage={currentPage} />} />
         <Route
           path="/list/page/:number"
           element={

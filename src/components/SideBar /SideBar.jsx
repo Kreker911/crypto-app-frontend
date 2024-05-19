@@ -4,7 +4,7 @@ import { dateOptions } from "../../utils/constants";
 import { useMemo } from "react";
 import Converter from "../Converter/Converter";
 
-const SideBar = ({ coin }) => {
+const SideBar = ({ coin, isLoading }) => {
   const price24h = coin?.market_data.price_change_percentage_24h;
 
   const market24h = coin?.market_data.market_cap_change_percentage_24h;
@@ -63,7 +63,7 @@ const SideBar = ({ coin }) => {
         </>
       )}
 
-      <Converter coin={coin} />
+      <Converter coin={coin} isLoading={isLoading} />
 
       <p className="side__description">{formattedDescription}</p>
 

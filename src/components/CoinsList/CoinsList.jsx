@@ -1,11 +1,11 @@
 import "./CoinsList.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import { options } from "../../utils/constants";
 import Pagination from "../Pagination/Pagination";
 import PreLoader from "../PreLoader/PreLoader";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const CoinsList = ({
   coins,
@@ -17,6 +17,16 @@ const CoinsList = ({
   const [search, setSearch] = useState();
 
   const navigate = useNavigate();
+
+  const { number } = useParams();
+
+  const page = parseInt(number, 10);
+
+  useEffect(() => {
+    if (!isNaN(page) && page !== currentPage) {
+      onPageChange(page);
+    }
+  }, [number, currentPage]);
 
   const handleSearch = () => {
     if (!search) {
