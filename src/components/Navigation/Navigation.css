@@ -33,3 +33,7 @@
 .navigation__market:hover {
   color: rgba(173, 255, 66, 0.8);
 }
+
+.link__style {
+  text-decoration: none;
+}

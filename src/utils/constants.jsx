@@ -22,3 +22,15 @@ export const options = {
     },
   },
 };
+
+const apiKey = import.meta.env.VITE_API_KEY;
+
+export const dateOptions = { day: "numeric", month: "short", year: "numeric" };
+
+export const apiOptions = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    "x-cg-demo-api-key": `${apiKey}`,
+  },
+};

@@ -1,6 +1,7 @@
 import "./Pagination.css";
 import previous from "../../images/icon-previous.svg";
 import next from "../../images/icon-next.svg";
+import { Link } from "react-router-dom";
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const pages = [];
@@ -21,7 +22,8 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 
   return (
     <div className="pagination">
-      <button
+      <Link
+        to={`/list/page/${currentPage - 1}`}
         onClick={() => {
           if (currentPage !== 1) {
             onPageChange(currentPage - 1);
@@ -30,22 +32,31 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         className="pagination__button"
       >
         <img className="pagination__icon" src={previous} alt="previous-icon" />
-      </button>
-      {pages.map((page, index) => (
-        <div
-          key={index}
-          className={` ${page === currentPage ? "active" : ""} ${
-            page == "..." ? "pagination__elipsis" : "pagination__page"
-          }`}
-          onClick={() => {
-            onPageChange(page);
-          }}
-        >
-          {page}
-        </div>
-      ))}
+      </Link>
 
-      <button
+      {pages.map((page, index) =>
+        page == "..." ? (
+          <div key={index} className="pagination__elipsis">
+            {page}
+          </div>
+        ) : (
+          <Link
+            to={`/list/page/${page}`}
+            key={index}
+            className={` ${
+              page === currentPage ? "active" : ""
+            } ${"pagination__page"}`}
+            onClick={() => {
+              onPageChange(page);
+            }}
+          >
+            {page}
+          </Link>
+        )
+      )}
+
+      <Link
+        to={`/list/page/${currentPage + 1}`}
         onClick={() => {
           if (currentPage !== totalPages) {
             onPageChange(currentPage + 1);
@@ -54,7 +65,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         className="pagination__button"
       >
         <img className="pagination__icon" src={next} alt="next-icon" />
-      </button>
+      </Link>
     </div>
   );
 };

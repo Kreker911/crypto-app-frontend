@@ -13,7 +13,7 @@ const Footer = () => {
         <Link
           to="https://tripleten.co.il/?from=us"
           className="footer__link"
-          target="blank"
+          target="_blank"
         >
           Triple Ten
         </Link>
@@ -21,7 +21,7 @@ const Footer = () => {
         <Link
           to="https://github.com/Kreker911"
           className="footer__git"
-          target="blank"
+          target="_blank"
         >
           <img className="footer__images" src={gitHub} alt="GitHub" />
         </Link>
@@ -29,7 +29,7 @@ const Footer = () => {
         <Link
           to="https://www.linkedin.com/in/ilya-mukhamedov"
           className="footer__in"
-          target="blank"
+          target="_blank"
         >
           <img className="footer__images" src={linkedIn} alt="LinkedIn" />
         </Link>

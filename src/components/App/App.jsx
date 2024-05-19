@@ -2,19 +2,17 @@ import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
-import PreLoader from "../PreLoader/PreLoader";
-import CoinPage from "../CoinsPage/CoinsPage";
+import CoinsList from "../CoinsList/CoinsList";
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import { fetchCoins } from "../../utils/coinApi";
-import { set } from "lodash";
-import CoinsPage from "../CoinsPage/CoinsPage";
+import CoinPage from "../CoinPage/CoinPage";
 
 export default function App() {
   const [coins, setCoins] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 45;
+  const totalPages = 133;
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -40,9 +38,9 @@ export default function App() {
       <Routes>
         <Route exact path="/" element={<Main />} />
         <Route
-          path="/list"
+          path="/list/page/:number"
           element={
-            <CoinsPage
+            <CoinsList
               coins={coins}
               isLoading={isLoading}
               currentPage={currentPage}
@@ -51,6 +49,7 @@ export default function App() {
             />
           }
         />
+        <Route path="/:id" element={<CoinPage />} />
       </Routes>
 
       <Footer />
