@@ -3,8 +3,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchCoin } from "../../utils/coinApi";
 import SideBar from "../SideBar /SideBar";
+import CoinInfo from "../CoinInfo/CoinInfo";
 
-const CoinPage = () => {
+const CoinPage = ({ isLoading }) => {
   const { id } = useParams();
 
   const [coin, setCoin] = useState();
@@ -20,7 +21,7 @@ const CoinPage = () => {
   return (
     <div className="page__container">
       <SideBar coin={coin} />
-      <h1>hello wolrd</h1>
+      <CoinInfo id={id} isLoading={isLoading} coin={coin} />
     </div>
   );
 };

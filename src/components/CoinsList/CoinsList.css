@@ -26,13 +26,6 @@
   border-collapse: collapse;
 }
 
-th {
-  position: sticky;
-  top: 0px;
-  background-color: #8acc35;
-  z-index: 1;
-}
-
 .coin__title {
   color: #000;
   font-family: "Cabinet Grotesk", sans-serif;
@@ -41,6 +34,10 @@ th {
   font-weight: 700;
   line-height: 22px;
   height: 50px;
+  position: sticky;
+  top: 0px;
+  background-color: #8acc35;
+  z-index: 1;
 }
 
 .coin__stat {

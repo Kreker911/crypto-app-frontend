@@ -11,3 +11,9 @@ export const fetchCoins = (currentPage) => {
 export const fetchCoin = (id) => {
   return request(`https://api.coingecko.com/api/v3/coins/${id}`, apiOptions);
 };
+
+export const fetchCoinHistory = (id, days) => {
+  return request(
+    `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}`
+  );
+};

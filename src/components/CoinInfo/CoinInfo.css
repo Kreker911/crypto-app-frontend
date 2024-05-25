@@ -1,0 +1,74 @@
+.info__container {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 40px;
+  gap: 40px;
+}
+
+.button__container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.days__button {
+  border: 1px solid #8acc35;
+  border-radius: 5px;
+  padding: 5px 10px 5px;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  transition: 0.3s ease;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  background: transparent;
+}
+
+.days__button:hover {
+  background-color: rgba(138, 204, 53, 0.7);
+}
+
+.days__button.active {
+  background-color: #8acc35;
+  cursor: default;
+}
+.days__button.active:hover {
+  opacity: 1;
+}
+
+.table__container {
+  width: 100%;
+  /* border-collapse: collapse; */
+
+  text-align: center;
+  border-radius: 10px;
+  table-layout: fixed;
+  overflow: hidden;
+}
+
+.table__header {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  height: 40px;
+  background-color: #8acc35;
+}
+
+.table__row {
+  align-items: center;
+  align-content: center;
+  background-color: #1b1b1b;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 16px;
+  height: 40px;
+  font-style: normal;
+  font-weight: 500;
+}

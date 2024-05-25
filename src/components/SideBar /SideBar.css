@@ -1,7 +1,7 @@
 .side__container {
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 35%;
   align-items: center;
   border-right: 1px solid #8acc35;
 }
@@ -44,7 +44,6 @@
 .price__container {
   display: flex;
   gap: 40px;
-
   -webkit-box-shadow: 0px -5px 5px -5px rgba(138, 204, 53, 0.6) inset;
   -moz-box-shadow: 0px -5px 5px -5px rgba(138, 204, 53, 0.6) inset;
   box-shadow: 0px -5px 5px -5px rgba(138, 204, 53, 0.6) inset;

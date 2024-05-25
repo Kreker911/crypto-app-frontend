@@ -4,7 +4,7 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import CoinsList from "../CoinsList/CoinsList";
 import { useState, useEffect } from "react";
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { fetchCoins } from "../../utils/coinApi";
 import CoinPage from "../CoinPage/CoinPage";
 
@@ -49,7 +49,7 @@ export default function App() {
             />
           }
         />
-        <Route path="/:id" element={<CoinPage />} />
+        <Route path="/:id" element={<CoinPage isLoading={isLoading} />} />
       </Routes>
 
       <Footer />

@@ -1,8 +1,23 @@
-# React + Vite
+### Crypto Spotter Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a cryptocurrency dashboard that displays a list of cryptocurrencies with detailed information, historical data, and an interactive line chart showing price trends over various time periods. The application allows users to search for specific cryptocurrencies, view their current and historical prices, and analyze their performance using visual charts.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Cryptocurrency List: Displays a paginated list of cryptocurrencies with their rank, name, symbol, current price, 24-hour price change percentage, market cap, and a 7-day price trend chart.
+
+- Search Functionality: Allows users to search for cryptocurrencies by name or symbol on current page.
+
+- Historical Data Chart: Shows an interactive line chart with historical price data for the selected cryptocurrency over different time periods (1 day, 7 days, 30 days, 1 year).
+
+- Dynamic Tooltips: Displays date, month, and time in tooltips when hovering over the chart.
+
+- Responsive Design: Optimized for various screen sizes.
+
+## Technologies Used
+
+- React
+- Chart.js
+- Vite
+- npm
+- HTML and CSS
