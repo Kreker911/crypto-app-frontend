@@ -15,7 +15,7 @@ const Footer = () => {
           className="footer__link"
           target="_blank"
         >
-          Triple Ten
+          TripleTen
         </Link>
 
         <Link

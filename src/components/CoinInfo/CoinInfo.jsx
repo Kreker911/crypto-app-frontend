@@ -40,6 +40,14 @@ const CoinInfo = ({ id, isLoading, coin }) => {
     }
   };
 
+  const formatNumber = (num) => {
+    if (num >= 1e3) {
+      return (num / 1e3).toFixed(2) + "K";
+    } else {
+      return num.toFixed(2);
+    }
+  };
+
   const createGradient = (ctx, chartArea) => {
     const colorTop = hexToRgba(setColor(), 0.2);
     const colorBottom = hexToRgba(setColor(), 0);
@@ -111,7 +119,6 @@ const CoinInfo = ({ id, isLoading, coin }) => {
                 tooltip: {
                   callbacks: {
                     title: (context) => {
-                      console.log(context);
                       const tooltipItem = context[0];
                       const date = new Date(
                         historicalData[tooltipItem.dataIndex][0]
@@ -157,8 +164,12 @@ const CoinInfo = ({ id, isLoading, coin }) => {
                   },
                   ticks: {
                     callback: (value) => {
-                      return `$${value.toLocaleString()}`;
+                      return `$${
+                        value > 1 ? formatNumber(value) : value.toFixed(8)
+                      }`;
                     },
+                    align: "end",
+                    font: { size: 10 },
                   },
                 },
                 x: {
@@ -171,6 +182,7 @@ const CoinInfo = ({ id, isLoading, coin }) => {
                   ticks: {
                     maxTicksLimit: 8,
                     align: "start",
+                    font: { size: 10 },
                   },
                 },
               },

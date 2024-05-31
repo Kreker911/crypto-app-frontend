@@ -3,7 +3,7 @@ import { apiOptions } from "./constants";
 
 export const fetchCoins = (currentPage) => {
   return request(
-    `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=100&page=${currentPage}&sparkline=true`,
+    `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=100&page=${currentPage}&sparkline=true&price_change_percentage=24h%2C7d`,
     apiOptions
   );
 };

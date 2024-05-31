@@ -10,9 +10,16 @@
   gap: 20px;
 }
 
-.header__logo {
+.header__link {
   width: 70px;
   height: 70px;
+  background-image: url(../../images/Logo-white.svg);
+  background-repeat: no-repeat;
+}
+
+.header__link:hover {
+  background-image: url(../../images/Logo-green.svg);
+  opacity: 1;
 }
 
 .header__title {
@@ -22,5 +29,30 @@
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
-  margin: 0 0 5px 0;
+}
+
+@media (max-width: 810px) {
+  .header__link {
+    width: 50px;
+    height: 50px;
+  }
+
+  .header__title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 505px) {
+  .header__link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header__title {
+    font-size: 14px;
+  }
+
+  .header__container {
+    gap: 10px;
+  }
 }

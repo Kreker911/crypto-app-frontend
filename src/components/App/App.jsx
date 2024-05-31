@@ -33,26 +33,27 @@ export default function App() {
   }, [currentPage]);
 
   return (
-    <>
+    <div className="app-container">
       <Header currentPage={currentPage} />
-      <Routes>
-        <Route exact path="/" element={<Main currentPage={currentPage} />} />
-        <Route
-          path="/list/page/:number"
-          element={
-            <CoinsList
-              coins={coins}
-              isLoading={isLoading}
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={handlePageChange}
-            />
-          }
-        />
-        <Route path="/:id" element={<CoinPage isLoading={isLoading} />} />
-      </Routes>
-
+      <div className="content">
+        <Routes>
+          <Route exact path="/" element={<Main currentPage={currentPage} />} />
+          <Route
+            path="/list/page/:number"
+            element={
+              <CoinsList
+                coins={coins}
+                isLoading={isLoading}
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+              />
+            }
+          />
+          <Route path="/:id" element={<CoinPage isLoading={isLoading} />} />
+        </Routes>
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }

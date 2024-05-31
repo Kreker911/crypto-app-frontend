@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 const Navigation = ({ currentPage }) => {
   return (
     <div className="navigation">
-      <Link to="/" className="link__style">
-        <p className="navigation__home"> Home</p>
+      <Link to="/" className="navigation__link">
+        Home
       </Link>
-      <Link to={`/list/page/${currentPage}`} className="link__style">
-        <p className="navigation__market"> Coin List</p>
+      <Link to={`/list/page/${currentPage}`} className="navigation__link">
+        Coin List
       </Link>
     </div>
   );

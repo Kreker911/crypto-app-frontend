@@ -1,10 +1,11 @@
-body {
-  margin: 30px 100px;
-}
-
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
+}
+
+body,
+html {
+  height: 90%;
 }
 
 main {

@@ -19,7 +19,7 @@ const Converter = ({ coin }) => {
       const amountValue = parseFloat(value) || 0;
       setAmount(amountValue);
       setUsdAmount(
-        amountValue * currentPrice > 0
+        amountValue * currentPrice > 1
           ? (amountValue * currentPrice).toFixed(2)
           : amountValue * currentPrice
       );
@@ -32,7 +32,7 @@ const Converter = ({ coin }) => {
       const usdValue = parseFloat(value) || 0;
       setUsdAmount(usdValue);
       setAmount(
-        usdValue / currentPrice > 0
+        usdValue / currentPrice > 1
           ? (usdValue / currentPrice).toFixed(2)
           : usdValue / currentPrice
       );
@@ -49,7 +49,6 @@ const Converter = ({ coin }) => {
           <input
             className="converter__input"
             type="text"
-            placeholder="0"
             onChange={handleAmountChange}
             onFocus={(e) => e.target.select()}
             value={amount}
@@ -61,7 +60,6 @@ const Converter = ({ coin }) => {
         <div className="converter__usd">
           <input
             className="converter__input"
-            placeholder="0"
             onChange={handleUsdAmountChange}
             onFocus={(e) => e.target.select()}
             value={usdAmount}

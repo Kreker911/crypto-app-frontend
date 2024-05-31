@@ -12,7 +12,11 @@ This project is a cryptocurrency dashboard that displays a list of cryptocurrenc
 
 - Dynamic Tooltips: Displays date, month, and time in tooltips when hovering over the chart.
 
+- In the project, the Routes and Route components from React Router were utilized to manage the application's navigation.
+
 - Responsive Design: Optimized for various screen sizes.
+
+- Custom Converter component that displays the value in USD of entered amount of coins
 
 ## Technologies Used
 
@@ -20,4 +24,5 @@ This project is a cryptocurrency dashboard that displays a list of cryptocurrenc
 - Chart.js
 - Vite
 - npm
+- React Router
 - HTML and CSS

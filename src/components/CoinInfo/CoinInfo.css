@@ -3,15 +3,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  padding: 40px;
-  gap: 40px;
+  padding: 20px;
+  gap: 50px;
 }
 
 .button__container {
   display: flex;
   justify-content: space-around;
+  gap: 15px;
   width: 100%;
 }
 
@@ -45,8 +44,6 @@
 
 .table__container {
   width: 100%;
-  /* border-collapse: collapse; */
-
   text-align: center;
   border-radius: 10px;
   table-layout: fixed;
@@ -71,4 +68,33 @@
   height: 40px;
   font-style: normal;
   font-weight: 500;
+}
+
+@media (max-width: 1125px) {
+  .info__container {
+    width: 100%;
+    gap: 15px;
+    padding: 0;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .days__button {
+    font-size: 10px;
+    padding: 5px 5px 5px;
+  }
+
+  .button__container {
+    justify-content: space-between;
+  }
+
+  .table__header {
+    height: 25px;
+    font-size: 10px;
+  }
+  .table__row {
+    height: 25px;
+    font-size: 10px;
+  }
 }

@@ -1,7 +1,6 @@
 .circle__preloader {
   display: block;
   margin: 200px auto 230px;
-
   width: 124px;
   height: 24px;
   mask: conic-gradient(

@@ -26,6 +26,7 @@ const CoinsList = ({
     if (!isNaN(page) && page !== currentPage) {
       onPageChange(page);
     }
+    console.log(coins);
   }, [number, currentPage]);
 
   const handleSearch = () => {
@@ -38,6 +39,20 @@ const CoinsList = ({
         coin.name.toLowerCase().includes(search?.toLowerCase()) ||
         coin.symbol.toLowerCase().includes(search?.toLowerCase())
     );
+  };
+
+  const formatNumber = (num) => {
+    if (num >= 1e12) {
+      return (num / 1e12).toFixed(2) + " $" + " T";
+    } else if (num >= 1e9) {
+      return (num / 1e9).toFixed(2) + " $" + " B";
+    } else if (num >= 1e6) {
+      return (num / 1e6).toFixed(2) + " $" + " M";
+    } else if (num >= 1e3) {
+      return (num / 1e3).toFixed(2) + " $" + " K";
+    } else {
+      return num.toString();
+    }
   };
 
   return (
@@ -57,48 +72,59 @@ const CoinsList = ({
             <thead>
               <tr className="coin__title">
                 <th>#</th>
-                <th
-                  style={{
-                    width: "450px",
-                    paddingLeft: "30px",
-                  }}
-                  align="left"
-                >
+                <th className="th__coin" align="left">
                   Coin
                 </th>
-                <th>Price</th>
-                <th style={{ paddingLeft: "7px" }}>24h %</th>
-                <th>Market Cap</th>
-                <th>Last 7 Days</th>
+                <th className="th__price" align="right">
+                  Price
+                </th>
+                <th className="th__24h" align="right">
+                  24h %
+                </th>
+                <th className="th__cap" align="right">
+                  Market Cap
+                </th>
+                <th className="th__chart">Last 7 Days</th>
               </tr>
             </thead>
-
             <tbody>
               {handleSearch().map((coin) => {
                 const percentage = coin.price_change_percentage_24h;
+                const percentage7d =
+                  coin.price_change_percentage_7d_in_currency;
                 return (
                   <tr
                     key={coin.id}
                     className="coin__stat"
                     onClick={() => navigate(`/${coin.id}`)}
                   >
-                    <td className="coin__props">
+                    <td className="coin__rank">
                       {coin.market_cap_rank ? coin.market_cap_rank : "-"}
                     </td>
-                    <td className="coin__container">
+
+                    <td className="coin__container" align="left">
                       <img
                         className="coin__image"
                         src={coin.image}
                         alt={coin.id}
                       />
                       <div className="coin__name">{coin.name}</div>
-                      <div className="coin__props coin__symbol">
-                        {coin.symbol.toUpperCase()}
+                      <div>
+                        <div className="coin__symbol">
+                          {coin.symbol.toUpperCase()}
+                        </div>
+
+                        <div className="coin__cap">
+                          {coin.market_cap
+                            ? formatNumber(coin.market_cap)
+                            : "-"}
+                        </div>
                       </div>
                     </td>
+
                     <td className="coin__props">${coin.current_price}</td>
                     <td
-                      className="coin__props"
+                      className="coin__props coin__24h"
                       style={
                         percentage > 0
                           ? { color: "#16c784" }
@@ -110,18 +136,14 @@ const CoinsList = ({
                       {percentage > 0 && "+"}
                       {percentage ? percentage.toFixed(2) + "%" : "-"}
                     </td>
-                    <td className="coin__props">
+                    <td className="coin__props coin__market-cap">
                       {coin.market_cap
                         ? "$" + coin.market_cap.toLocaleString()
                         : "-"}
                     </td>
                     <td className="coin__spark">
                       <Line
-                        style={{
-                          width: "160px",
-                          height: "70px",
-                          padding: "10px",
-                        }}
+                        className="coin__chart"
                         data={{
                           labels: coin.sparkline_in_7d.price.map(
                             (data) => data
@@ -142,12 +164,28 @@ const CoinsList = ({
                         }}
                         options={options}
                       />
+                      <div
+                        className="coin__props props__24h"
+                        style={
+                          percentage > 0
+                            ? { color: "#16c784" }
+                            : percentage == null
+                            ? { color: "#fff" }
+                            : { color: "#ea3943" }
+                        }
+                      >
+                        {percentage7d > 0 && "+"}
+                        {percentage7d ? percentage7d.toFixed(2) + "%" : "-"}
+                      </div>
                     </td>
                   </tr>
                 );
               })}
             </tbody>
           </table>
+          {handleSearch().length === 0 && (
+            <div className="coin__none"> No matches found </div>
+          )}
           <Pagination
             onPageChange={onPageChange}
             currentPage={currentPage}
