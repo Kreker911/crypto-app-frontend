@@ -33,7 +33,8 @@ This project is a cryptocurrency dashboard that displays a list of cryptocurrenc
 
 ## Images 
 
-![alt text]([https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true](https://raw.githubusercontent.com/ilyamukhamedov/crypto-app-frontend/stage-react-api/src/images/mainPage.png))
+![Main Page](https://github.com/ilyamukhamedov/crypto-app-frontend/blob/stage-react-api/src/images/mainPage.png)
+
 
 ## Deploy 
 
