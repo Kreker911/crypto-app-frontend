@@ -27,3 +27,7 @@ This project is a cryptocurrency dashboard that displays a list of cryptocurrenc
 - npm
 - React Router
 - HTML and CSS
+
+## Deploy 
+
+https://crypto-app-frontend-dy22crpeq-ilyamukhamedovs-projects.vercel.app
