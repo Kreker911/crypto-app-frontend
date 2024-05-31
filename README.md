@@ -30,3 +30,11 @@ This project is a cryptocurrency dashboard that displays a list of cryptocurrenc
 - npm
 - React Router
 - HTML and CSS
+
+## Images 
+
+![alt text]([https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true](https://raw.githubusercontent.com/ilyamukhamedov/crypto-app-frontend/stage-react-api/src/images/mainPage.png))
+
+## Deploy 
+
+https://crypto-app-frontend-dy22crpeq-ilyamukhamedovs-projects.vercel.app
