@@ -2,7 +2,7 @@ import "./CoinPage.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchCoin } from "../../utils/coinApi";
-import SideBar from "../SideBar /SideBar";
+import SideBar from "../SideBar/SideBar";
 import CoinInfo from "../CoinInfo/CoinInfo";
 
 const CoinPage = ({ isLoading }) => {
