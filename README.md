@@ -42,4 +42,4 @@ This project is a cryptocurrency dashboard that displays a list of cryptocurrenc
 
 ## Deploy 
 
-https://crypto-app-frontend-dy22crpeq-ilyamukhamedovs-projects.vercel.app
+https://crypto-app-frontend-ctif1t69z-ilyamukhamedovs-projects.vercel.app
