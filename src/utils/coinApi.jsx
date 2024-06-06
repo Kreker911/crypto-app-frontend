@@ -8,7 +8,7 @@ export const fetchCoins = (currentPage) => {
   );
 };
 
-export const fetchCoin = (id) => {
+export const getCoin = (id) => {
   return request(`https://api.coingecko.com/api/v3/coins/${id}`, apiOptions);
 };
 

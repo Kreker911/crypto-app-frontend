@@ -6,7 +6,7 @@ const Header = ({ currentPage }) => {
   return (
     <div className="header">
       <div className="header__container">
-        <Link to="/" className="header__link" />
+        <Link to="/" className="header__logo" />
         <h1 className="header__title">Crypto Spotter</h1>
       </div>
       <Navigation currentPage={currentPage} />

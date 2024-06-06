@@ -1,4 +1,4 @@
-.info__container {
+.coin-info {
   width: 65%;
   display: flex;
   flex-direction: column;
@@ -7,14 +7,14 @@
   gap: 50px;
 }
 
-.button__container {
+.coin-info__button {
   display: flex;
   justify-content: space-around;
   gap: 15px;
   width: 100%;
 }
 
-.days__button {
+.coin-info__days {
   border: 1px solid #8acc35;
   border-radius: 5px;
   padding: 5px 10px 5px;
@@ -28,21 +28,22 @@
   justify-content: center;
   cursor: pointer;
   background: transparent;
+  background-color: #1b1b1b;
 }
 
-.days__button:hover {
+.coin-info__days:hover {
   background-color: rgba(138, 204, 53, 0.7);
 }
 
-.days__button.active {
+.coin-info__days.active {
   background-color: #8acc35;
   cursor: default;
 }
-.days__button.active:hover {
+.coin-info__days.active:hover {
   opacity: 1;
 }
 
-.table__container {
+.coin-info__table {
   width: 100%;
   text-align: center;
   border-radius: 10px;
@@ -50,7 +51,7 @@
   overflow: hidden;
 }
 
-.table__header {
+.coin-info__header {
   font-family: "Cabinet Grotesk", sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -59,7 +60,7 @@
   background-color: #8acc35;
 }
 
-.table__row {
+.coin-info__row {
   align-items: center;
   align-content: center;
   background-color: #1b1b1b;
@@ -71,7 +72,7 @@
 }
 
 @media (max-width: 1125px) {
-  .info__container {
+  .coin-info {
     width: 100%;
     gap: 15px;
     padding: 0;
@@ -80,20 +81,20 @@
 }
 
 @media (max-width: 450px) {
-  .days__button {
+  .coin-info__button {
+    justify-content: space-between;
+  }
+
+  .coin-info__days {
     font-size: 10px;
     padding: 5px 5px 5px;
   }
 
-  .button__container {
-    justify-content: space-between;
-  }
-
-  .table__header {
+  .coin-info__header {
     height: 25px;
     font-size: 10px;
   }
-  .table__row {
+  .coin-info__row {
     height: 25px;
     font-size: 10px;
   }

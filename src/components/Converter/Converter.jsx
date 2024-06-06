@@ -40,11 +40,11 @@ const Converter = ({ coin }) => {
   };
 
   return (
-    <>
+    <div className="converter">
       <div className="converter__header">
         {coin?.symbol.toUpperCase()} to USD converter
       </div>
-      <div className="converter__container">
+      <div className="converter__body">
         <div className="converter__coin">
           <input
             className="converter__input"
@@ -53,7 +53,7 @@ const Converter = ({ coin }) => {
             onFocus={(e) => e.target.select()}
             value={amount}
           />
-          <span className="converter__span-coin">
+          <span className="converter__symbol">
             {coin?.symbol.toUpperCase()}
           </span>
         </div>
@@ -64,10 +64,10 @@ const Converter = ({ coin }) => {
             onFocus={(e) => e.target.select()}
             value={usdAmount}
           />
-          <span className="converter__span-usd">USD</span>
+          <span className="converter__usd-symbol">USD</span>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

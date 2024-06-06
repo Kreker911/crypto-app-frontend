@@ -1,17 +1,17 @@
 import "./CoinPage.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchCoin } from "../../utils/coinApi";
+import { getCoin } from "../../utils/coinApi";
 import SideBar from "../SideBar/SideBar";
 import CoinInfo from "../CoinInfo/CoinInfo";
 
 const CoinPage = ({ isLoading }) => {
   const { id } = useParams();
 
-  const [coin, setCoin] = useState();
+  const [coin, setCoin] = useState(null);
 
   useEffect(() => {
-    fetchCoin(id)
+    getCoin(id)
       .then((coin) => {
         setCoin(coin);
       })
@@ -19,7 +19,7 @@ const CoinPage = ({ isLoading }) => {
   }, [id]);
 
   return (
-    <div className="page__container">
+    <div className="coin-page">
       <SideBar coin={coin} />
       <CoinInfo id={id} isLoading={isLoading} coin={coin} />
     </div>

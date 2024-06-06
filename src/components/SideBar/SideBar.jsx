@@ -36,38 +36,38 @@ const SideBar = ({ coin, isLoading }) => {
   );
 
   return (
-    <div className="side__container">
-      <img className="side__image" src={coin?.image.large} alt={coin?.name} />
+    <div className="side-bar">
+      <img
+        className="side-bar__coin-logo"
+        src={coin?.image.large}
+        alt={coin?.name}
+      />
 
-      <div className="name__container">
-        <h1 className="side__title">{coin?.name}</h1>
-        <p className="side__symbol">{coin?.symbol.toUpperCase()}</p>
+      <div className="name">
+        <h1 className="name__title">{coin?.name}</h1>
+        <p className="name__symbol">{coin?.symbol.toUpperCase()}</p>
       </div>
 
-      <div className="price__container">
-        <h2 className="side__price">${currentPrice}</h2>
-        <p className="side__price24h" style={percentageStyle(price24h)}>
+      <div className="price">
+        <h2 className="price__value">${currentPrice}</h2>
+        <p className="price__percentage" style={percentageStyle(price24h)}>
           {price24h > 0 && "+"}
           {price24h ? price24h.toFixed(2) + "%" : "0%"}
         </p>
       </div>
 
-      {coin?.market_data.low_24h.usd && (
-        <>
-          <span className="side__range-line"></span>
-          <div className="side__range">
-            <span> ${coin?.market_data.low_24h.usd}</span>
-            <span> 24h Range</span>
-            <span> ${coin?.market_data.high_24h.usd}</span>
-          </div>
-        </>
-      )}
+      <span className="side__range-line"></span>
+      <div className="side__range">
+        <span> ${coin?.market_data.low_24h.usd}</span>
+        <span> 24h Range</span>
+        <span> ${coin?.market_data.high_24h.usd}</span>
+      </div>
 
       <Converter coin={coin} isLoading={isLoading} />
 
       <p className="side__description">{formattedDescription}</p>
 
-      <div className="data__container">
+      <div className="data">
         <p>Market cap:</p>
         <div className="market__data">
           <p style={percentageStyle(market24h)}>
@@ -78,7 +78,7 @@ const SideBar = ({ coin, isLoading }) => {
         </div>
       </div>
 
-      <div className="data__container">
+      <div className="data">
         <p>Total supply:</p>
         <p>
           {coin?.market_data.total_supply.toLocaleString()}{" "}
@@ -86,40 +86,39 @@ const SideBar = ({ coin, isLoading }) => {
         </p>
       </div>
 
-      <div className="data__container">
+      <div className="data">
         <p className="data__title">All-time high:</p>
-
         <p className="data__title">${coin?.market_data.ath.usd}</p>
       </div>
 
-      <div className="data__container">
-        <span className="athl">
+      <div className="data">
+        <span className="data__athl">
           {new Date(coin?.market_data.ath_date.eur).toLocaleString(
             "en-US",
             dateOptions
           )}
         </span>
 
-        <span className="atp" style={percentageStyle(ath)}>
+        <span className="data__athl" style={percentageStyle(ath)}>
           {ath > 0 && "+"}
           {ath && ath.toFixed(2) + "%"}
         </span>
       </div>
 
-      <div className="data__container">
+      <div className="data">
         <p className="data__title">All-time low:</p>
         <p className="data__title">${coin?.market_data.atl.usd}</p>
       </div>
 
-      <div className="data__container">
-        <span className="athl">
+      <div className="data">
+        <span className="data__athl">
           {new Date(coin?.market_data.atl_date.eur).toLocaleString(
             "en-US",
             dateOptions
           )}
         </span>
 
-        <span className="athl" style={percentageStyle(atl)}>
+        <span className="data__athl" style={percentageStyle(atl)}>
           {atl > 0 && "+"}
           {atl && atl.toFixed(2) + "%"}
         </span>

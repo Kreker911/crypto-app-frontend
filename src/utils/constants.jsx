@@ -43,9 +43,11 @@ export const chartDays = [
   },
 ];
 
-const apiKey = import.meta.env.VITE_API_KEY;
-
 export const dateOptions = { day: "numeric", month: "short", year: "numeric" };
+
+export const totalPages = 133;
+
+const apiKey = import.meta.env.VITE_API_KEY;
 
 export const apiOptions = {
   method: "GET",

@@ -95,3 +95,11 @@
     gap: 0px;
   }
 }
+
+@media (max-width: 420px) {
+  .main__title {
+    font-size: 30px;
+    line-height: 50px;
+    margin-top: 60px;
+  }
+}

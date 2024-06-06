@@ -1,10 +1,13 @@
 import "./CoinsList.css";
+
+import Pagination from "../Pagination/Pagination";
+import PreLoader from "../PreLoader/PreLoader";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
+
 import { useState, useEffect } from "react";
 import "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import { options } from "../../utils/constants";
-import Pagination from "../Pagination/Pagination";
-import PreLoader from "../PreLoader/PreLoader";
 import { useNavigate, useParams } from "react-router-dom";
 
 const CoinsList = ({
@@ -14,7 +17,9 @@ const CoinsList = ({
   currentPage,
   totalPages,
 }) => {
-  const [search, setSearch] = useState();
+  const [search, setSearch] = useState("");
+
+  const [error, setError] = useState(null);
 
   const navigate = useNavigate();
 
@@ -26,8 +31,15 @@ const CoinsList = ({
     if (!isNaN(page) && page !== currentPage) {
       onPageChange(page);
     }
-    console.log(coins);
   }, [number, currentPage]);
+
+  useEffect(() => {
+    if (!coins.length && !isLoading) {
+      setError("Failed to load data. Please try again later.");
+    } else {
+      setError(null);
+    }
+  }, [coins, isLoading]);
 
   const handleSearch = () => {
     if (!search) {
@@ -56,35 +68,29 @@ const CoinsList = ({
   };
 
   return (
-    <div className="coin">
+    <div className="coins-list coins-list_margin">
       <input
-        className="coin__input"
+        className="coins-list__input"
         type="text"
         placeholder="Search for crypto currency"
         onChange={(e) => setSearch(e.target.value)}
       ></input>
 
-      {isLoading ? (
+      {error ? (
+        <ErrorMessage message={error} />
+      ) : isLoading ? (
         <PreLoader />
       ) : (
         <>
-          <table className="coin__info">
+          <table className="coins-list__table">
             <thead>
-              <tr className="coin__title">
+              <tr className="coins-list__header">
                 <th>#</th>
-                <th className="th__coin" align="left">
-                  Coin
-                </th>
-                <th className="th__price" align="right">
-                  Price
-                </th>
-                <th className="th__24h" align="right">
-                  24h %
-                </th>
-                <th className="th__cap" align="right">
-                  Market Cap
-                </th>
-                <th className="th__chart">Last 7 Days</th>
+                <th className="coins-list__header-name">Coin</th>
+                <th className="coins-list__header-price">Price</th>
+                <th className="coins-list__header-24h">24h %</th>
+                <th className="coins-list__header-cap">Market Cap</th>
+                <th className="coins-list__header-chart">Last 7 Days</th>
               </tr>
             </thead>
             <tbody>
@@ -95,26 +101,26 @@ const CoinsList = ({
                 return (
                   <tr
                     key={coin.id}
-                    className="coin__stat"
+                    className="coins-list__row"
                     onClick={() => navigate(`/${coin.id}`)}
                   >
-                    <td className="coin__rank">
+                    <td className="coins-list__rank">
                       {coin.market_cap_rank ? coin.market_cap_rank : "-"}
                     </td>
 
-                    <td className="coin__container" align="left">
+                    <td className="coins-list__coin">
                       <img
-                        className="coin__image"
+                        className="coins-list__image"
                         src={coin.image}
                         alt={coin.id}
                       />
-                      <div className="coin__name">{coin.name}</div>
+                      <div className="coins-list__name">{coin.name}</div>
                       <div>
-                        <div className="coin__symbol">
+                        <div className="coins-list__symbol">
                           {coin.symbol.toUpperCase()}
                         </div>
 
-                        <div className="coin__cap">
+                        <div className="coins-list__market-cap">
                           {coin.market_cap
                             ? formatNumber(coin.market_cap)
                             : "-"}
@@ -122,9 +128,11 @@ const CoinsList = ({
                       </div>
                     </td>
 
-                    <td className="coin__props">${coin.current_price}</td>
+                    <td className="coins-list__coin_props">
+                      ${coin.current_price}
+                    </td>
                     <td
-                      className="coin__props coin__24h"
+                      className="coins-list__coin_props coins-list__coin_props_hidden"
                       style={
                         percentage > 0
                           ? { color: "#16c784" }
@@ -136,14 +144,14 @@ const CoinsList = ({
                       {percentage > 0 && "+"}
                       {percentage ? percentage.toFixed(2) + "%" : "-"}
                     </td>
-                    <td className="coin__props coin__market-cap">
+                    <td className="coins-list__coin_props coins-list__coin_props_hidden">
                       {coin.market_cap
                         ? "$" + coin.market_cap.toLocaleString()
                         : "-"}
                     </td>
-                    <td className="coin__spark">
+                    <td className="coins-list__spark">
                       <Line
-                        className="coin__chart"
+                        className="coins-list__chart"
                         data={{
                           labels: coin.sparkline_in_7d.price.map(
                             (data) => data
@@ -165,7 +173,7 @@ const CoinsList = ({
                         options={options}
                       />
                       <div
-                        className="coin__props props__24h"
+                        className="coins-list__coin_props coins-list__coin_props_7d"
                         style={
                           percentage > 0
                             ? { color: "#16c784" }
@@ -184,7 +192,7 @@ const CoinsList = ({
             </tbody>
           </table>
           {handleSearch().length === 0 && (
-            <div className="coin__none"> No matches found </div>
+            <div className="coin__none"> No matches found on current page </div>
           )}
           <Pagination
             onPageChange={onPageChange}

@@ -1,11 +1,18 @@
-.page__container {
+.coin-page {
   display: flex;
   margin: 20px;
 }
 
 @media (max-width: 1125px) {
-  .page__container {
+  .coin-page {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .coin-page {
+    margin: 0px;
+    padding-top: 10px;
   }
 }

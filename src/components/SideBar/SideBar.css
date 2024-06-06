@@ -1,4 +1,4 @@
-.side__container {
+.side-bar {
   display: flex;
   flex-direction: column;
   width: 35%;
@@ -7,7 +7,7 @@
   padding: 20px;
 }
 
-.side__image {
+.side-bar__coin-logo {
   height: 150px;
   border: 1px solid #8acc35;
   border-radius: 10px;
@@ -17,13 +17,13 @@
   box-shadow: 0px -1px 39px -10px rgba(138, 204, 53, 0.5);
 }
 
-.name__container {
+.name {
   display: flex;
   gap: 30px;
   margin: 10px 0 10px;
 }
 
-.side__title {
+.name__title {
   margin: 0;
   font-family: "Cabinet Grotesk", sans-serif;
   font-size: 20px;
@@ -31,7 +31,7 @@
   font-weight: 700;
 }
 
-.side__symbol {
+.name__symbol {
   margin: 0;
   opacity: 0.6;
   font-family: "Cabinet Grotesk", sans-serif;
@@ -42,7 +42,7 @@
   align-content: center;
 }
 
-.price__container {
+.price {
   display: flex;
   gap: 40px;
   -webkit-box-shadow: 0px -5px 5px -5px rgba(138, 204, 53, 0.6) inset;
@@ -50,7 +50,7 @@
   box-shadow: 0px -5px 5px -5px rgba(138, 204, 53, 0.6) inset;
 }
 
-.side__price {
+.price__value {
   font-family: "Cabinet Grotesk", sans-serif;
   font-size: 25px;
   font-style: normal;
@@ -58,7 +58,7 @@
   margin: 0;
 }
 
-.side__price24h {
+.price__percentage {
   font-family: "Cabinet Grotesk", sans-serif;
   font-size: 15px;
   font-style: normal;
@@ -101,7 +101,7 @@ a:hover {
   opacity: 0.6;
 }
 
-.data__container {
+.data {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -121,34 +121,33 @@ a:hover {
   margin-bottom: 0;
 }
 
-.atp {
+.data__athl {
   font-size: 10px;
 }
 
 @media (max-width: 1125px) {
-  .side__container {
+  .side {
     border-right: none;
-
     width: 100%;
     padding: 0;
   }
 }
 
 @media (max-width: 450px) {
-  .side__image {
+  .side-bar__coin-logo {
     height: 120px;
   }
-  .side__title {
+  .name__title {
     font-size: 15px;
   }
 
-  .side__symbol {
+  .name__symbol {
     font-size: 10px;
   }
-  .side__price {
+  .price__value {
     font-size: 20px;
   }
-  .side__price24h {
+  .price__percentage {
     font-size: 10px;
   }
 
@@ -160,7 +159,7 @@ a:hover {
     font-size: 11px;
   }
 
-  .data__container {
+  .data {
     font-size: 10px;
   }
 }

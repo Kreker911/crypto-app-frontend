@@ -1,18 +1,20 @@
 import "./App.css";
+
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import CoinsList from "../CoinsList/CoinsList";
+import CoinPage from "../CoinPage/CoinPage";
+
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { fetchCoins } from "../../utils/coinApi";
-import CoinPage from "../CoinPage/CoinPage";
+import { totalPages } from "../../utils/constants";
 
 export default function App() {
   const [coins, setCoins] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 133;
 
   const handlePageChange = (page) => {
     setCurrentPage(page);

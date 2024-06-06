@@ -7,7 +7,7 @@ import { chartDays } from "../../utils/constants";
 import hexToRgba from "hex-to-rgba";
 
 const CoinInfo = ({ id, isLoading, coin }) => {
-  const [historicalData, setHistoricalData] = useState();
+  const [historicalData, setHistoricalData] = useState([]);
   const [days, setDays] = useState(1);
   const chartRef = useRef(null);
 
@@ -19,7 +19,6 @@ const CoinInfo = ({ id, isLoading, coin }) => {
   useEffect(() => {
     fetchCoinHistory(id, days)
       .then((data) => {
-        console.log(data);
         setHistoricalData(data?.prices);
       })
       .catch(console.error);
@@ -64,7 +63,7 @@ const CoinInfo = ({ id, isLoading, coin }) => {
   };
 
   return (
-    <div className="info__container">
+    <div className="coin-info">
       {isLoading ? (
         <PreLoader />
       ) : (
@@ -201,10 +200,12 @@ const CoinInfo = ({ id, isLoading, coin }) => {
               },
             }}
           />
-          <div className="button__container">
+          <div className="coin-info__button">
             {chartDays.map((day) => (
               <button
-                className={`days__button ${day.value == days ? "active" : ""}`}
+                className={`coin-info__days ${
+                  day.value == days ? "active" : ""
+                }`}
                 key={day.value}
                 onClick={() => setDays(day.value)}
               >
@@ -214,8 +215,8 @@ const CoinInfo = ({ id, isLoading, coin }) => {
           </div>
         </>
       )}
-      <table className="table__container">
-        <thead className="table__header ">
+      <table className="coin-info__table">
+        <thead className="coin-info__header ">
           <tr>
             <th>24h</th>
             <th>7d</th>
@@ -224,12 +225,12 @@ const CoinInfo = ({ id, isLoading, coin }) => {
           </tr>
         </thead>
         <tbody>
-          <tr className="table__row">
+          <tr className="coin-info__row">
             <td
               style={
                 percentage24h > 0
                   ? { color: "#16c784" }
-                  : percentage24h == null
+                  : percentage24h == 0
                   ? { color: "#fff" }
                   : { color: "#ea3943" }
               }
@@ -241,7 +242,7 @@ const CoinInfo = ({ id, isLoading, coin }) => {
               style={
                 percentage7d > 0
                   ? { color: "#16c784" }
-                  : percentage7d == null
+                  : percentage7d == 0
                   ? { color: "#fff" }
                   : { color: "#ea3943" }
               }
@@ -253,7 +254,7 @@ const CoinInfo = ({ id, isLoading, coin }) => {
               style={
                 percentage30d > 0
                   ? { color: "#16c784" }
-                  : percentage30d == null
+                  : percentage30d == 0
                   ? { color: "#fff" }
                   : { color: "#ea3943" }
               }
@@ -265,7 +266,7 @@ const CoinInfo = ({ id, isLoading, coin }) => {
               style={
                 percentage1y > 0
                   ? { color: "#16c784" }
-                  : percentage1y == null
+                  : percentage1y == 0
                   ? { color: "#fff" }
                   : { color: "#ea3943" }
               }
