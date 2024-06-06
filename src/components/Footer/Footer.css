@@ -1,8 +1,8 @@
 .footer {
-  margin-top: 140px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 0 10px;
 }
 
 .footer__text {
@@ -23,7 +23,7 @@
   margin-top: 50px;
 }
 
-.footer__link {
+.footer__tripleten {
   font-family: "Cabinet Grotesk", sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -32,30 +32,67 @@
   transition: 0.2s ease-in;
   margin: 0;
   cursor: pointer;
+  text-decoration: none;
+  color: #fff;
 }
 
-.footer__link:hover {
-  opacity: 0.6;
-}
-
-.footer__git {
-  width: 24px;
-  height: 24px;
+.footer__github {
   transition: 0.2s ease-in;
   cursor: pointer;
+  text-decoration: none;
+  color: #fff;
 }
 
-.footer__git:hover {
-  opacity: 0.6;
-}
-
-.footer__in {
+.footer__logo {
+  border: none;
   width: 24px;
   height: 24px;
-  transition: 0.2s ease-in;
-  cursor: pointer;
 }
 
-.footer__in:hover {
-  opacity: 0.6;
+.footer__linkedin {
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
+@media (max-width: 810px) {
+  .footer__text {
+    font-size: 12px;
+  }
+  .footer__tripleten {
+    font-size: 12px;
+  }
+  .footer__logo {
+    width: 18px;
+    height: 18px;
+  }
+
+  .footer__social {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  .footer__text {
+    font-size: 10px;
+  }
+  .footer__tripleten {
+    font-size: 10px;
+  }
+  .footer__logo {
+    width: 15px;
+    height: 15px;
+  }
+
+  .footer__social {
+    gap: 18px;
+    margin-bottom: 10px;
+  }
+  .footer {
+    flex-direction: column-reverse;
+  }
+  .footer__text {
+    margin: 0;
+  }
 }

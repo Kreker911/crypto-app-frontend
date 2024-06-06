@@ -1,18 +1,15 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
-import logo from "../../images/Logo-white.svg";
 import Navigation from "../Navigation/Navigation";
 
-const Header = () => {
+const Header = ({ currentPage }) => {
   return (
     <div className="header">
       <div className="header__container">
-        <Link to="/">
-          <img className="header__logo" src={logo} alt="logo" />
-        </Link>
+        <Link to="/" className="header__logo" />
         <h1 className="header__title">Crypto Spotter</h1>
       </div>
-      <Navigation />
+      <Navigation currentPage={currentPage} />
     </div>
   );
 };

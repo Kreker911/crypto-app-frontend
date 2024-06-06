@@ -4,32 +4,39 @@
   gap: 20px;
 }
 
-.navigation__home {
+.navigation__link {
   color: #fff;
   font-family: "Cabinet Grotesk", sans-serif;
   font-size: 25px;
   font-style: normal;
   font-weight: 500;
-  line-height: 24px;
+  line-height: normal;
   transition: 0.15s ease-in;
-  margin: 0 0 5px 0;
 }
 
-.navigation__home:hover {
-  opacity: 0.6;
+.navigation__link:hover {
+  color: rgba(173, 255, 66, 0.8);
+  display: inline-block;
+  opacity: 1;
 }
 
-.navigation__list {
-  color: #fff;
-  font-family: "Cabinet Grotesk", sans-serif;
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-  transition: 0.15s ease-in;
-  margin: 0 0 5px 0;
+@media (max-width: 810px) {
+  .navigation__link {
+    font-size: 18px;
+  }
 }
 
-.navigation__list:hover {
-  opacity: 0.6;
+@media (max-width: 505px) {
+  .navigation__link {
+    font-size: 14px;
+  }
+  .navigation {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .navigation__link {
+    font-size: 12px;
+  }
 }

@@ -1,0 +1,103 @@
+.converter {
+  width: 100%;
+}
+
+.converter__header {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.converter__body {
+  display: flex;
+  justify-content: center;
+  background-color: #1b1b1b;
+  width: 100%;
+  border: 1px solid #8acc35;
+  border-radius: 5px;
+}
+
+.converter__coin {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  padding: 2px 4px 2px;
+  border-right: 1px solid #8acc35;
+  width: 100%;
+}
+
+.converter__input {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  align-content: center;
+  text-align: left;
+  background-color: #1b1b1b;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0;
+}
+
+.converter__symbol {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  align-content: center;
+}
+
+.converter__usd {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  padding: 2px 4px 2px;
+  width: 100%;
+}
+
+.converter__usd-input {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  align-content: center;
+  text-align: left;
+  background-color: #1b1b1b;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0;
+}
+
+.converter__usd-symbol {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  align-content: center;
+}
+
+@media (max-width: 450px) {
+  .converter__header {
+    font-size: 11px;
+  }
+
+  .converter__coin {
+    height: 25px;
+  }
+
+  .converter__input {
+    font-size: 10px;
+  }
+
+  .converter__symbol {
+    font-size: 10px;
+  }
+
+  .converter__usd {
+    height: 25px;
+  }
+
+  .converter__usd-symbol {
+    font-size: 10px;
+  }
+}

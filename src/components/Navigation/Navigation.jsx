@@ -1,14 +1,14 @@
 import "./Navigation.css";
 import { Link } from "react-router-dom";
 
-const Navigation = () => {
+const Navigation = ({ currentPage }) => {
   return (
     <div className="navigation">
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <p className="navigation__home"> Home</p>
+      <Link to="/" className="navigation__link">
+        Home
       </Link>
-      <Link to="/list" style={{ textDecoration: "none" }}>
-        <p className="navigation__list"> Coin List</p>
+      <Link to={`/list/page/${currentPage}`} className="navigation__link">
+        Coin List
       </Link>
     </div>
   );

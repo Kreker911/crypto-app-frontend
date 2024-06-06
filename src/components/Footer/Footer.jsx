@@ -1,6 +1,6 @@
 import "./Footer.css";
-import gitHub from "../../images/git.png";
-import linkedIn from "../../images/linkedin.png";
+import gitHub from "../../images/git.svg";
+import linkedIn from "../../images/linkedin.svg";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -12,26 +12,26 @@ const Footer = () => {
       <div className="footer__social">
         <Link
           to="https://tripleten.co.il/?from=us"
-          style={{ textDecoration: "none", color: "inherit" }}
-          target="blank"
+          className="footer__tripleten"
+          target="_blank"
         >
-          <p className="footer__link">Triple Ten</p>
+          TripleTen
         </Link>
 
         <Link
-          to="https://github.com/Kreker911"
-          style={{ textDecoration: "none", color: "inherit" }}
-          target="blank"
+          to="https://github.com/ilyamukhamedov"
+          className="footer__github"
+          target="_blank"
         >
-          <img className="footer__git" src={gitHub} alt="GitHub" />
+          <img className="footer__logo" src={gitHub} alt="GitHub logo" />
         </Link>
 
         <Link
           to="https://www.linkedin.com/in/ilya-mukhamedov"
-          style={{ textDecoration: "none", color: "inherit" }}
-          target="blank"
+          className="footer__linkedin"
+          target="_blank"
         >
-          <img className="footer__in" src={linkedIn} alt="LinkedIn" />
+          <img className="footer__logo" src={linkedIn} alt="LinkedIn logo" />
         </Link>
       </div>
     </div>

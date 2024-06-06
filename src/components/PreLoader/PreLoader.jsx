@@ -2,9 +2,9 @@ import "./PreLoader.css";
 
 const PreLoader = () => {
   return (
-    <>
-      <div className="circle-preloader"></div>
-    </>
+    <div className="circle">
+      <div className="circle__preloader" />
+    </div>
   );
 };
 
