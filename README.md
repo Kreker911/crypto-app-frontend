@@ -25,11 +25,11 @@ This project is a cryptocurrency dashboard that displays a list of cryptocurrenc
 
 ## Screenshots
 
-![Main Page](https://github.com/ilyamukhamedov/crypto-app-frontend/blob/stage-react-api/src/images/mainPage.png)
+![Main Page](https://github.com/ilyamukhamedov/crypto-app-frontend/blob/main/src/images/mainPage.png)
 
-![Coin List](https://github.com/ilyamukhamedov/crypto-app-frontend/blob/stage-react-api/src/images/coinList.png)
+![Coin List](https://github.com/ilyamukhamedov/crypto-app-frontend/blob/main/src/images/coinList.png)
 
-![Coin Info](https://github.com/ilyamukhamedov/crypto-app-frontend/blob/stage-react-api/src/images/coinInfo.png)
+![Coin Info](https://github.com/ilyamukhamedov/crypto-app-frontend/blob/main/src/images/coinInfo.png)
 
 ## Deploy
 
