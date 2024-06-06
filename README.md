@@ -22,6 +22,7 @@ This project is a cryptocurrency dashboard that displays a list of cryptocurrenc
 - React Router
 - HTML and CSS
 
+
 ## Screenshots
 
 ![Main Page](https://github.com/ilyamukhamedov/crypto-app-frontend/blob/stage-react-api/src/images/mainPage.png)
@@ -33,3 +34,4 @@ This project is a cryptocurrency dashboard that displays a list of cryptocurrenc
 ## Deploy
 
 https://crypto-app-frontend-ctif1t69z-ilyamukhamedovs-projects.vercel.app
+
