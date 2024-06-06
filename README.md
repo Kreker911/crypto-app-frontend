@@ -1,4 +1,4 @@
-### Crypto Spotter Frontend
+## Crypto Spotter Frontend
 
 This project is a cryptocurrency dashboard that displays a list of cryptocurrencies with detailed information, historical data, and an interactive line chart showing price trends over various time periods. The application allows users to search for specific cryptocurrencies, view their current and historical prices, and analyze their performance using visual charts.
 
