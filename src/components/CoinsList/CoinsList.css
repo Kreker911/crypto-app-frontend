@@ -57,11 +57,13 @@
 .coins-list__header-24h {
   padding: 5px;
   text-align: right;
+  width: 100px;
 }
 
 .coins-list__header-cap {
   padding: 5px;
   text-align: right;
+  width: 170px;
 }
 
 .coins-list__header-chart {
