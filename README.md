@@ -36,7 +36,7 @@ This project is a cryptocurrency dashboard that displays a list of cryptocurrenc
 
 ![Main Page](https://github.com/ilyamukhamedov/crypto-app-frontend/blob/main/src/images/mainPage.png)
 
-<img src="[relative/path/in/repository/to/image.svg](https://github.com/ilyamukhamedov/crypto-app-frontend/blob/main/src/images/mainPage.png)" width="128"/>
+<img src="https://github.com/ilyamukhamedov/crypto-app-frontend/blob/main/src/images/mainPage.png" width="128"/>
 
 ![Coin List](https://github.com/ilyamukhamedov/crypto-app-frontend/blob/main/src/images/coinList.png)
 
