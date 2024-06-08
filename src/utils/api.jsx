@@ -1,5 +1,3 @@
-import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
-
 export async function checkResponse(res) {
   if (res.ok) {
     return res.json();
@@ -14,7 +12,6 @@ export async function request(url, options) {
     return await checkResponse(res);
   } catch (error) {
     console.error(error);
-    // return <ErrorMessage message={error.message} />;
     return null;
   }
 }
