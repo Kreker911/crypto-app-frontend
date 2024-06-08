@@ -20,20 +20,15 @@ import { apiOptions } from "./constants";
 
 export const fetchCoins = (currentPage) => {
   return request(
-    `https://crypto-app-frontend-three.vercel.app/api/coins?id=markets&vs_currency=usd&per_page=100&page=${currentPage}&sparkline=true&price_change_percentage=24h%2C7d`,
+    `/api/coins/markets?vs_currency=usd&per_page=100&page=${currentPage}&sparkline=true&price_change_percentage=24h%2C7d`,
     apiOptions
   );
 };
 
 export const getCoin = (id) => {
-  return request(
-    `https://crypto-app-frontend-three.vercel.app/api/coins?id=${id}`,
-    apiOptions
-  );
+  return request(`/api/coins/${id}`, apiOptions);
 };
 
 export const fetchCoinHistory = (id, days) => {
-  return request(
-    `https://crypto-app-frontend-three.vercel.app/api/coins?id=${id}&endpoint=market_chart&vs_currency=usd&days=${days}`
-  );
+  return request(`/api/coins/${id}/market_chart?vs_currency=usd&days=${days}`);
 };
