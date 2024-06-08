@@ -1,19 +1,39 @@
 import { request } from "./api";
 import { apiOptions } from "./constants";
 
+// export const fetchCoins = (currentPage) => {
+//   return request(
+//     `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=100&page=${currentPage}&sparkline=true&price_change_percentage=24h%2C7d`,
+//     apiOptions
+//   );
+// };
+
+// export const getCoin = (id) => {
+//   return request(`https://api.coingecko.com/api/v3/coins/${id}`, apiOptions);
+// };
+
+// export const fetchCoinHistory = (id, days) => {
+//   return request(
+//     `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}`
+//   );
+// };
+
 export const fetchCoins = (currentPage) => {
   return request(
-    `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=100&page=${currentPage}&sparkline=true&price_change_percentage=24h%2C7d`,
+    `https://crypto-app-frontend-three.vercel.app/api/coins?id=markets&vs_currency=usd&per_page=100&page=${currentPage}&sparkline=true&price_change_percentage=24h%2C7d`,
     apiOptions
   );
 };
 
 export const getCoin = (id) => {
-  return request(`https://api.coingecko.com/api/v3/coins/${id}`, apiOptions);
+  return request(
+    `https://crypto-app-frontend-three.vercel.app/api/coins?id=${id}`,
+    apiOptions
+  );
 };
 
 export const fetchCoinHistory = (id, days) => {
   return request(
-    `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}`
+    `https://crypto-app-frontend-three.vercel.app/api/coins?id=${id}&endpoint=market_chart&vs_currency=usd&days=${days}`
   );
 };
