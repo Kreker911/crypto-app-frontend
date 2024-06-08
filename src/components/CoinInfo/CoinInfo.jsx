@@ -164,7 +164,7 @@ const CoinInfo = ({ id, isLoading, coin }) => {
                   ticks: {
                     callback: (value) => {
                       return `$${
-                        value > 1 ? formatNumber(value) : value.toFixed(8)
+                        value >= 1 ? formatNumber(value) : value.toFixed(8)
                       }`;
                     },
                     align: "end",
