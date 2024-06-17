@@ -17,7 +17,7 @@ const Converter = ({ coin }) => {
     const value = e.target.value;
     if (regExp.test(value)) {
       const amountValue = parseFloat(value) || 0;
-      setAmount(amountValue);
+      setAmount(value);
       setUsdAmount(
         amountValue * currentPrice > 1
           ? (amountValue * currentPrice).toFixed(2)
@@ -30,7 +30,7 @@ const Converter = ({ coin }) => {
     const value = e.target.value;
     if (regExp.test(value)) {
       const usdValue = parseFloat(value) || 0;
-      setUsdAmount(usdValue);
+      setUsdAmount(value);
       setAmount(
         usdValue / currentPrice > 1
           ? (usdValue / currentPrice).toFixed(2)
