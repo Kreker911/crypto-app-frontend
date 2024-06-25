@@ -5,6 +5,7 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import CoinsList from "../CoinsList/CoinsList";
 import CoinPage from "../CoinPage/CoinPage";
+import Spline from "@splinetool/react-spline";
 
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";

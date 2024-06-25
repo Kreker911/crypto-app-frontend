@@ -1,12 +1,4 @@
 @font-face {
-  font-family: "Jersey25";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("./fonts/Jersey25-Regular.ttf") format("ttf");
-}
-
-@font-face {
   font-family: "Cabinet Grotesk";
   font-style: normal;
   font-weight: 500;
