@@ -22,7 +22,6 @@
 .converter__coin {
   display: flex;
   justify-content: space-between;
-  height: 30px;
   padding: 2px 4px 2px;
   border-right: 1px solid #8acc35;
   width: 100%;
@@ -32,7 +31,9 @@
   font-family: "Cabinet Grotesk", sans-serif;
   font-size: 15px;
   font-weight: 500;
-  align-content: center;
+  /* align-content: center; */
+  /* align-items: center; */
+  color: #fff;
   text-align: left;
   background-color: #1b1b1b;
   border: none;
@@ -44,6 +45,7 @@
 .converter__symbol {
   font-family: "Cabinet Grotesk", sans-serif;
   font-size: 13px;
+  color: #fff;
   font-weight: 700;
   align-content: center;
 }
@@ -56,22 +58,10 @@
   width: 100%;
 }
 
-.converter__usd-input {
-  font-family: "Cabinet Grotesk", sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  align-content: center;
-  text-align: left;
-  background-color: #1b1b1b;
-  border: none;
-  outline: none;
-  width: 100%;
-  padding: 0;
-}
-
 .converter__usd-symbol {
   font-family: "Cabinet Grotesk", sans-serif;
   font-size: 13px;
+  color: #fff;
   font-weight: 700;
   align-content: center;
 }
