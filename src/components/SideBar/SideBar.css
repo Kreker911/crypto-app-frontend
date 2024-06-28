@@ -21,6 +21,7 @@
   display: flex;
   gap: 30px;
   margin: 10px 0 10px;
+  align-items: center;
 }
 
 .name__title {
@@ -39,7 +40,7 @@
   font-style: normal;
   font-weight: 500;
   padding-top: 3px;
-  align-content: center;
+  /* align-content: center; */
 }
 
 .price {
